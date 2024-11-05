@@ -3,13 +3,15 @@ function hitungNilai(array: number[]): {
   tinggi: number;
   rata2: number;
 } {
+  if (array.length === 0) {
+    throw new Error("Array cannot be empty");
+  }
+
   let rendah = array[0];
   let tinggi = array[0];
   let total = 0;
-  const count = array.length;
 
-  for (let i = 0; i < count; i++) {
-    const current = array[i];
+  for (const current of array) {
     total += current;
 
     if (current < rendah) {
@@ -21,11 +23,15 @@ function hitungNilai(array: number[]): {
     }
   }
 
-  const rata2 = total / count;
+  const rata2 = total / array.length;
 
   return { rendah, tinggi, rata2 };
 }
 
 const arr = [12, 5, 23, 18, 4, 45, 32];
-const hasilnya = hitungNilai(arr);
-console.log(arr + "->", hasilnya);
+try {
+  const hasilnya = hitungNilai(arr);
+  console.log(arr + "->", hasilnya);
+} catch (error) {
+  console.error(error.message);
+}
