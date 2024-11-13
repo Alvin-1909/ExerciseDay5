@@ -11,4 +11,4 @@ function segitigaAngka(tinggi: number): void {
 }
 
 const tinggi1: number = 4;
-segitigaAngka(tinggi);
+segitigaAngka(tinggi1);

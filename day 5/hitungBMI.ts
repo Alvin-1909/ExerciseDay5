@@ -16,8 +16,8 @@ function hitungBMI(berat: number, tinggi: number): string {
   }
 }
 
-const berat = 70;
-const tinggi = 1.75;
+const berat = 74;
+const tinggi = 1.68;
 
 console.log(`Berat: ${berat} kg`);
 console.log(`Tinggi: ${tinggi} m`);
